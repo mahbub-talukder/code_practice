@@ -1,0 +1,15 @@
+# testing
+
+radtest mahbub.alum 123457 localhost 0 testing123
+
+
+
+if(&control:Tmp-Integer-3 != 0){
+	  	# Let him connect with Expired_Pool in reply
+		ok
+		update reply {
+			Framed-Pool := "Expired_Pool"
+			Reply-Message := "%{User-Name} Your account has expired"
+		}
+
+	}
