@@ -19,6 +19,7 @@
 import calendar
 from datetime import date, datetime, timedelta, time
 from typing import Union
+from colorama import Fore
 from dateutil.parser import parse
 def duration_calculation(from_date: Union[datetime, date, str], duration_format: str, duration_unit: int, reverse: bool = False):
     """
@@ -381,6 +382,41 @@ def credit_consumed(credit_limit,available_balance):
     
 # print("credit_consumed-->",credit_consumed(credit_limit,available_balance))
 
-interested_on = 'alicense_lisp'
-is_reseller =  interested_on in ['license_lisp','non_license_lisp']
-print("is_reseller", is_reseller)
+# interested_on = 'alicense_lisp'
+# is_reseller =  interested_on in ['license_lisp','non_license_lisp']
+# print("is_reseller", is_reseller)
+
+
+def colorPrint(*values, color='green'):
+    """
+    Print color text  instead of regular print() on terminal.
+    
+    Especially for debugging
+
+    Args:
+        msg (str): print string / message
+        color (str, optional): text color name. Defaults to 'green'... 
+        see Fore doc string for available options
+    """
+    for msg in values:
+        print(getattr(Fore,color.upper(),Fore.GREEN) + str(msg) + Fore.RESET)
+
+
+
+# colorPrint('my name is khan','your name is khan','RED')
+
+def color_debug(*values, color='green'):
+    """
+    Color prints for multiple values stream.
+    
+    Especially for debugging
+
+    Args:
+        values (str): pass multiple print string / message as arguments
+        color (str, optional): text color name. Defaults to 'green'... 
+        see Fore doc string for available options
+    """
+    message = " ".join([str(i) for i in values])
+    print(getattr(Fore,color.upper(),Fore.GREEN) + message + Fore.RESET)
+
+color_debug(Fore,color='red')
