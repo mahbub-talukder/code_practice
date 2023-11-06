@@ -419,4 +419,4 @@ def color_debug(*values, color='green'):
     message = " ".join([str(i) for i in values])
     print(getattr(Fore,color.upper(),Fore.GREEN) + message + Fore.RESET)
 
-color_debug(Fore,color='red')
+# color_debug(Fore,color='red')

@@ -79,23 +79,35 @@ print(list(make_word()))
 # print(fib(4))
 
 
-def my_func(x, y=7, *args, **kwargs):
-   print(kwargs)
+# def my_func(x, y=7, *args, **kwargs):
+#    print(kwargs)
 
-my_func(2, 3, 4, 5, 6, a=7, b=8)
+# my_func(2, 3, 4, 5, 6, a=7, b=8)
 
+##lambda function
+# nums = {1, 2, 3, 4, 5, 6}
+# nums = {0, 1, 2, 3} & nums
+# print("nums-->", nums)
+# nums = filter(lambda x: x > 1, nums)
+# print(len(list(nums)))
 
-nums = {1, 2, 3, 4, 5, 6}
-nums = {0, 1, 2, 3} & nums
-print("nums-->", nums)
-nums = filter(lambda x: x > 1, nums)
-print(len(list(nums)))
-
-def power(x, y):
-  if y == 0:
-    return 1
-  else:
-    return x * power(x, y-1)
+# # recursion
+# def power(x, y):
+#   if y == 0:
+#     return 1
+#   else:
+#     return x * power(x, y-1)
 		
-print(power(2, 3))
+# print(power(2, 3))
 
+# a = (lambda x: x*(x+1),6)
+# print(a)
+
+
+nums = [1,2,5,6,3,9,8]
+def cb(x,y=5):
+
+    return x < 5
+  
+nums =  list(filter(lambda item: (item >5),nums))
+print("nums-->", nums)
