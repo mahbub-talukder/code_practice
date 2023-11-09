@@ -263,7 +263,7 @@ existing_slab = '0-100'
 new_slab_1 = '101-105'
 
 
-print('result-->',check_slab_conflict(existing_slab, new_slab_1))
+# print('result-->',check_slab_conflict(existing_slab, new_slab_1))
 
 
 
@@ -323,11 +323,6 @@ duplicates = count_duplicates(data, ['id','name'])
 # print(duplicates)
 
 # print(round(856.45))
-email = 'asdfklsafd'
-user_type = 'tesfdsf'
-
-if not email or user_type != 'crm_user':
-        print("exception executed")
 
 
 toList, ccList, bccList =  [[], [], []]
@@ -341,11 +336,11 @@ toList, ccList, bccList =  [[], [], []]
 checking = True
 checking_till= False
 not_is_null= True
-print('checking',checking or checking_till)
+# print('checking',checking or checking_till)
 
 a,b,c = 0,2,5
-print("a", a);print("b", b);print("c", c);c=checking==True;print("c", c)
-if checking==True:print("a", a);print("b", b);print("c", c);c=checking==True;print("c", c)
+# print("a", a);print("b", b);print("c", c);c=checking==True;print("c", c)
+# if checking==True:print("a", a);print("b", b);print("c", c);c=checking==True;print("c", c)
 
 
 sopose = 'few' if checking==True else 'monda'
@@ -417,6 +412,35 @@ def color_debug(*values, color='green'):
         see Fore doc string for available options
     """
     message = " ".join([str(i) for i in values])
-    print(getattr(Fore,color.upper(),Fore.GREEN) + message + Fore.RESET)
+    # print(getattr(Fore,color.upper(),Fore.GREEN) + message + Fore.RESET)
 
 # color_debug(Fore,color='red')
+
+
+def calculate_total_limit (start_date:date,till_date:date,total_sales:float):
+    print("====================================================")
+    print("start_date-->", start_date,"till_date-->", till_date)
+    total_days = abs((till_date - start_date).days) + 1
+    month_end = start_date.replace(day=calendar.monthrange(start_date.year, start_date.month)[1]) 
+    print("total_days-->", total_days,"month_end-->", month_end.day)
+
+    if till_date > month_end :
+        calculate_day = abs((month_end - start_date).days) + 1
+        print("calculate_day-->", calculate_day)
+        amount = (total_sales/month_end.day) * calculate_day
+        print("bill amount-->", amount)
+        start_date = (month_end + timedelta(days=1))
+        return  amount + calculate_total_limit(start_date,till_date,total_sales)
+    
+    else:
+        amount = (total_sales/month_end.day) * total_days
+        print("bill amount-->", amount)
+        return amount
+        
+sales_amount = 502
+billing_scheme = 65
+start_date =  datetime.now().today().replace(day=1).date()
+till_date = start_date + timedelta(days=billing_scheme-1)
+
+print(round(calculate_total_limit(start_date,till_date,sales_amount)))
+
