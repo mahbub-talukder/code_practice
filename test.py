@@ -437,9 +437,9 @@ def calculate_total_limit (start_date:date,till_date:date,total_sales:float):
         print("bill amount-->", amount)
         return amount
         
-sales_amount = 502
-billing_scheme = 65
-start_date =  datetime.now().today().replace(day=1).date()
+sales_amount = 3861000
+billing_scheme = 30
+start_date =  datetime.now().today().date()
 till_date = start_date + timedelta(days=billing_scheme-1)
 
 print(round(calculate_total_limit(start_date,till_date,sales_amount)))
