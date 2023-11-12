@@ -39,7 +39,7 @@ function calculateCreditSuggestionLimit(startDate, tillDate, totalSales) {
 
         startDate = new Date(monthEnd.getFullYear(), monthEnd.getMonth(), monthEnd.getDate() + 1);
 
-        return amount + calculateTotalLimit(startDate, tillDate, totalSales);
+        return amount + calculateCreditSuggestionLimit(startDate, tillDate, totalSales);
     } else {
         const amount = (totalSales / monthEnd.getDate()) * totalDays;
         console.log("bill amount-->", amount);
