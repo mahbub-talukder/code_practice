@@ -420,20 +420,20 @@ def color_debug(*values, color='green'):
 def calculate_total_limit (start_date:date,till_date:date,total_sales:float):
     print("====================================================")
     print("start_date-->", start_date,"till_date-->", till_date)
-    total_days = abs((till_date - start_date).days) + 1
+    diff_days = abs((till_date - start_date).days) + 1
     month_end = start_date.replace(day=calendar.monthrange(start_date.year, start_date.month)[1]) 
-    print("total_days-->", total_days,"month_end-->", month_end.day)
+    print("diff_days-->", diff_days,"month_end-->", month_end.day)
 
     if till_date > month_end :
-        calculate_day = abs((month_end - start_date).days) + 1
-        print("calculate_day-->", calculate_day)
-        amount = (total_sales/month_end.day) * calculate_day
+        cal_diff_days = abs((month_end - start_date).days) + 1
+        print("cal_diff_days-->", cal_diff_days)
+        amount = (total_sales/month_end.day) * cal_diff_days
         print("bill amount-->", amount)
         start_date = (month_end + timedelta(days=1))
         return  amount + calculate_total_limit(start_date,till_date,total_sales)
     
     else:
-        amount = (total_sales/month_end.day) * total_days
+        amount = (total_sales/month_end.day) * diff_days
         print("bill amount-->", amount)
         return amount
         
