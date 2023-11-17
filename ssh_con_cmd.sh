@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
 echo 'testpass'
-spawn ssh -p 3232 mime@103.117.192.97
+spawn ssh -p 9859 test@100.117.182.97
 expect "assword:"
 send "testpass\r"
 interact
