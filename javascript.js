@@ -54,4 +54,92 @@ const startDate = new Date(today.getFullYear(), today.getMonth(), 1);
 const tillDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + billingScheme - 1);
 
 
-console.log(Math.round(calculateTotalLimit(startDate, tillDate, salesAmount)));
+// console.log(Math.round(calculateTotalLimit(startDate, tillDate, salesAmount)));
+
+// function data_gen(a,call_back){
+//     setTimeout(() => {
+//         a = 5
+//         call_back(a)
+        
+//     }, 2000);
+// }
+
+// console.log('print a');
+// console.log('print b');
+// var a = 1
+
+// data_gen(a,(data)=>{
+//     let sum  =  15 + data
+//     console.log('sum-->',sum);
+//     console.log('print c');
+// })
+
+
+
+
+// 1. callback 2.promise 3. async/await
+
+
+// result.then((value)=>{
+//     let sum  =  15 + value
+//     console.log('sum-->',sum);
+//     console.log('print c');
+// },err=>{
+//     console.log('print reject',err);
+// })
+
+var  fetchw = {
+    other_property : 'something',
+    a : 1,
+    b : 1,
+    post : function(url){
+        
+        return new Promise ((resolve,reject)=> {
+            setTimeout(() => {
+                if(this.a==this.b){
+                    console.log("I am waiting for 2 minutes")
+                    resolve(100)
+                }else{
+                    reject("a is not equal to b")
+                }
+            }, 2000);
+        })
+    } 
+}
+
+
+async function main(){
+
+    console.log('print a');
+    console.log('print b');
+    
+
+    // let fetch =  new Promise((resolve,reject)=>{
+    //     setTimeout(() => {
+    //         if(a==b){
+    //             console.log("I am waiting for 2 minutes")
+    //             resolve(100)
+    //         }else{
+    //             reject("a is not equal to b")
+    //         }
+    //     }, 2000);
+    // })
+    
+    let result =  await fetch('https://dummyjson.com/products/1',{
+        method  : 'GET',
+    }).json()
+    console.log("result-->", result);
+
+    // let value = await fetchw.post('url').catch(err=>{
+    //     console.log(err);
+    // });
+    // console.log("sum-->", value + 10);
+    // console.log("something else=-->");
+}
+
+main()
+
+
+
+// synchronies - 
+// asynchronies - 
