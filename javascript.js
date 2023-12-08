@@ -137,9 +137,11 @@ async function main(){
     // console.log("something else=-->");
 }
 
-main()
+// main()
 
 
 
 // synchronies - 
 // asynchronies - 
+
+
