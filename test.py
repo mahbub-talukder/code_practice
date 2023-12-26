@@ -442,5 +442,19 @@ billing_scheme = 14
 start_date =  datetime.now().today()
 till_date = start_date + timedelta(days=billing_scheme-1)
 
-print(round(calculate_total_limit(start_date,till_date,sales_amount)))
+# print(round(calculate_total_limit(start_date,till_date,sales_amount)))
+
+
+start_date =  datetime.strptime("2023-12-17","%Y-%m-%d")
+till_date =  datetime.strptime("2023-12-31","%Y-%m-%d")
+days_diff= abs((till_date - start_date).days )
+# print("days_diff-->", days_diff)
+
+val = float("254,483.87")
+print("b-->", val)
+
+
+
+
+
 
