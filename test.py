@@ -450,8 +450,44 @@ till_date =  datetime.strptime("2023-12-31","%Y-%m-%d")
 days_diff= abs((till_date - start_date).days )
 # print("days_diff-->", days_diff)
 
-val = float("254,483.87")
-print("b-->", val)
+# print("b-->", val)
+# from datetime import datetime
+
+from datetime import datetime
+
+def calculate_duration(d1, d2):
+    # Calculate the time difference
+    time_difference = d2 - d1
+
+    # Extract days, hours, minutes, and seconds
+    days, seconds = time_difference.days, time_difference.seconds
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = seconds % 60
+
+    # Build the duration string dynamically
+    duration_parts = []
+    if days:
+        duration_parts.append("{} days".format(days))
+    if hours:
+        duration_parts.append("{} hours".format(hours))
+    if minutes:
+        duration_parts.append("{} minutes".format(minutes))
+    if seconds:
+        duration_parts.append("{} seconds".format(seconds))
+
+    # Join the parts into a single string
+    duration_string = " ".join(duration_parts) if len(duration_parts) else '-'
+
+    return duration_string
+
+# Example usage:
+d1 = datetime(2023, 1, 1, 5, 0, 0)
+d2 = datetime(2023, 1, 1, 5, 0, 0)
+
+result = calculate_duration(d1, d2)
+print(result)
+
 
 
 
