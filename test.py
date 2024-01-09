@@ -316,12 +316,13 @@ def count_duplicates(list_of_dicts,keys:list):
 # Example usage:
 data = [
     {"id": 1, "name": "John"},
-    {"id": 2, "name": "John"}
+    {"id": 2, "name": "John"},
+    {"id": 2, "name": "John"},
 ]
 
 key_to_check = "id"
 duplicates = count_duplicates(data, ['id','name'])
-# print(duplicates)
+print(duplicates)
 
 # print(round(856.45))
 
@@ -532,23 +533,6 @@ for item in range(20):
 # else:
 #     print("Bandwidth Limit not found in the text.")
         
-
-import re
-
-text = "set firewall policer ACL24010002_m60mber-Labadie_FNA if-exceeding bandwidth-limit 60m"
-
-
-
-
-
-# Define a regular expression pattern to match digits and text separately
-
-
-    print("Digit Value:", digit_value)
-    print("Text Unit:", text_unit)
-else:
-    print("No match found.")
-
 
 
 

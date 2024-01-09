@@ -2,7 +2,7 @@ from collections import defaultdict
 from datetime import datetime,date,time, timedelta
 import calendar
 import time as _time
-from joblib import Parallel, delayed
+# from joblib import Parallel, delayed
 # st_date =  datetime.now()
 # valid_from =  datetime.strptime('2023-05-24 10:21:04','%Y-%m-%d %H:%M:%S') 
 # valid_to =  datetime.strptime('2023-06-23 23:59:59','%Y-%m-%d %H:%M:%S')
@@ -16,13 +16,13 @@ from joblib import Parallel, delayed
 # total_days =  abs((valid_to.date() - valid_from.date()).days) + 1
 # print("total_days-->",total_days)
 
-st_date =  datetime.now()
-valid_from =  datetime.strptime('2023-05-24','%Y-%m-%d') 
-valid_to =  datetime.strptime('2023-06-23','%Y-%m-%d')
-total_days =  abs((valid_to.date() - valid_from.date()).days) + 1
-consumed_days =  abs((st_date.date() - valid_from.date()).days)
-print("total_days-->",total_days)
-print("consumed days-->",consumed_days)
+# st_date =  datetime.now()
+# valid_from =  datetime.strptime('2023-05-24','%Y-%m-%d') 
+# valid_to =  datetime.strptime('2023-06-23','%Y-%m-%d')
+# total_days =  abs((valid_to.date() - valid_from.date()).days) + 1
+# consumed_days =  abs((st_date.date() - valid_from.date()).days)
+# print("total_days-->",total_days)
+# print("consumed days-->",consumed_days)
 
 
 
@@ -153,10 +153,27 @@ print("consumed days-->",consumed_days)
 # group by mobile_primary
 
 # # python group by 
-# groups = defaultdict(list)
+data = [
+    {'router' : 1 ,'interface' : 'ge-0/0/1'},
+    {'router' : 2 ,'interface' : 'ge-0/0/2'},
+    {'router' : 2 ,'interface' : 'ge-0/0/3'},
+    {'router' : 1 ,'interface' : 'ge-0/0/4'},
+    {'router' : 1 ,'interface' : 'ge-0/0/4'},
+]
 
-# for obj in excel_customer_data:
-#     groups[obj['reseller_username']].append(obj)
+command_groups = {}
+
+for obj in data:
+    if obj['router'] in command_groups:
+        command = [
+            f"route_interface  : {obj['interface']}",
+            f"route_interface  : {obj['interface']}",
+            f"route_interface  : {obj['interface']}",
+            f"route_interface  : {obj['interface']}",
+        ]
+        command_groups[obj['router']].extend(command)
+    else:
+         command_groups[obj['router']] = []
 
 # group_by_result = []
 # for block in  list(groups.values()):
@@ -165,7 +182,9 @@ print("consumed days-->",consumed_days)
 #         'list' : block
 #     }
 #     group_by_result.append(obj)
-# print("group_by_result-->",group_by_result)
+for key in command_groups:
+
+    print("\ngroup_by_result-->",command_groups[key])
 
 
 
@@ -250,21 +269,21 @@ class Note:
         self.next = None
 
 
-from joblib import Parallel, delayed
-from math import sqrt
-def sqaure(number,ext):
-    print('ext: ', ext)
-    result = sqrt(number**2)
-    # print('result: ', result)
-start = _time.time()
-datse = 'sdflk'
-node = Note()
-Parallel(n_jobs=-1)(delayed(sqaure)(i,node) for i in range(10))
-# for i in range(10000000):
-#     sqaure(i)
-end = _time.time()
-delay = (end-start)
-print('delay: ', delay)
+# from joblib import Parallel, delayed
+# from math import sqrt
+# def sqaure(number,ext):
+#     print('ext: ', ext)
+#     result = sqrt(number**2)
+#     # print('result: ', result)
+# start = _time.time()
+# datse = 'sdflk'
+# node = Note()
+# Parallel(n_jobs=-1)(delayed(sqaure)(i,node) for i in range(10))
+# # for i in range(10000000):
+# #     sqaure(i)
+# end = _time.time()
+# delay = (end-start)
+# print('delay: ', delay)
 
 # def outer_function(x):
 #     print('x: ', x)
