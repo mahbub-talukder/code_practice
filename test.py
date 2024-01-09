@@ -18,6 +18,7 @@
 
 import calendar
 from datetime import date, datetime, timedelta, time
+from sys import stdout
 from typing import Union
 from colorama import Fore
 from dateutil.parser import parse
@@ -486,7 +487,26 @@ d1 = datetime(2023, 1, 1, 5, 0, 0)
 d2 = datetime(2023, 1, 1, 5, 0, 0)
 
 result = calculate_duration(d1, d2)
-print(result)
+# print(result)
+
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['New York', 'San Francisco', 'Los Angeles']}
+
+df = pd.DataFrame(data)
+
+
+for item in range(20):
+    for key in data:
+        data[key].append(f'Item {key} {item}')
+
+
+
+
+
 
 
 
