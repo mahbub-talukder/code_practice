@@ -507,7 +507,8 @@ for item in range(20):
 
 
 
-
+output = "something went wrong \n hello world"
+print("output-->", output)
 
 
 
