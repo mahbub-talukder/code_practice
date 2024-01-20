@@ -507,8 +507,50 @@ for item in range(20):
 
 
 
-output = "something went wrong \n hello world"
-print("output-->", output)
+
+# import re
+
+# def convert_to_megabytes(value, unit):
+#     unit_multiplier = {'K': 1 / 1024, 'M': 1, 'G': 1024}
+#     return float(value) * unit_multiplier.get(unit.upper(), 1)
+
+# text = "set firewall policer ACL24010002_m60mber-Labadie_FNA if-exceeding bandwidth-limit 60m"
+
+# # Define a regular expression pattern to match the bandwidth-limit value and optional unit
+# pattern = r'bandwidth-limit\s+(\d+)([KMG]?)?'
+
+# # Use re.search to find the match in the text
+# match = re.search(pattern, text)
+
+# # Extract the value and unit if a match is found
+# if match:
+#     value, unit = match.groups()
+#     print("value-->", value)
+#     print("unit-->", unit)
+#     converted_value = convert_to_megabytes(value, unit)
+#     print("Bandwidth Limit:", converted_value, "MB")
+# else:
+#     print("Bandwidth Limit not found in the text.")
+        
+
+import re
+
+text = "set firewall policer ACL24010002_m60mber-Labadie_FNA if-exceeding bandwidth-limit 60m"
+
+
+
+
+
+# Define a regular expression pattern to match digits and text separately
+
+
+    print("Digit Value:", digit_value)
+    print("Text Unit:", text_unit)
+else:
+    print("No match found.")
+
+
+
 
 
 
