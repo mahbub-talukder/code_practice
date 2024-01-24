@@ -263,10 +263,10 @@ for key in command_groups:
 #             """.format(parent_fullname=parent_fullname, child_id=child_id, child_fullname=child_fullname)
 # print('emailbody',emailbody)
 
-class Note:
-    def __init__(self) -> None:
-        self.data = None
-        self.next = None
+# class Note:
+#     def __init__(self) -> None:
+#         self.data = None
+#         self.next = None
 
 
 # from joblib import Parallel, delayed
@@ -297,4 +297,14 @@ class Note:
 
 # Using the outer function to create a new function
 # outer_function(10)
+def some():
+    return (45,1,2)
 
+
+a = 5
+b = 15
+
+bill,a,b = some()
+print("bill-->", bill)
+print("a-->", a)
+print("b-->", b)
