@@ -301,10 +301,16 @@ def some():
     return (45,1,2)
 
 
-a = 5
-b = 15
+# a = 5
+# b = 15
 
-bill,a,b = some()
-print("bill-->", bill)
-print("a-->", a)
-print("b-->", b)
+# bill,a,b = some()
+# print("bill-->", bill)
+# print("a-->", a)
+# print("b-->", b)
+from datetime import datetime
+from dateutil import tz
+BD_TZ =  tz.gettz('Asia/Dhaka')  
+test = datetime.utcnow()
+bd_time = datetime.now().astimezone(BD_TZ).date()
+print("test-->", test,'bd_time-->',bd_time)
