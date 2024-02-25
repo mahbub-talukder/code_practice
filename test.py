@@ -532,12 +532,14 @@ result = calculate_duration(d1, d2)
 #     print("Bandwidth Limit:", converted_value, "MB")
 # else:
 #     print("Bandwidth Limit not found in the text.")
-        
+age = 50
+data = [
+    {'name' : 'Mahbub','age' : ''},
+    {'name' : 'saif','age' : ''},
+    {'name' : 'taqbir','age' : ''},
+]
 
+for item in data:
+    item['age'] = age
 
-
-
-
-
-
-
+print(data)
