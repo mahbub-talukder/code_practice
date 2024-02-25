@@ -145,3 +145,22 @@ async function main(){
 // asynchronies - 
 
 
+let billing = [
+    {start_date : '2024-02-01',particular: 'IIG', bw : 10,sales_price : 100},
+    {start_date : '2024-02-10',particular: 'IIG', bw : 10,sales_price : 100},
+    {start_date : '2024-02-01',particular: 'GGC', bw : 10,sales_price : 100},
+    {start_date : '2024-02-15',particular: 'GGC', bw : 10,sales_price : 100},
+    {start_date : '2024-02-10',particular: 'GGC', bw : 10,sales_price : 100},
+    {start_date : '2024-02-01',particular: 'IPT', bw : 10,sales_price : 100},
+    {start_date : '2024-02-10',particular: 'IPT', bw : 10,sales_price : 100},
+    {start_date : '2024-02-15',particular: 'IPT', bw : 10,sales_price : 100},
+    {start_date : '2024-02-25',particular: 'CDN', bw : 10,sales_price : 100},
+]
+
+//group By
+
+// var result =  billing.reduce((prev,curr)=>{
+//     (prev[curr.start_date] = prev[curr.start_date] || []).push(curr)
+//     return prev
+// },{})
+// console.log("result-->", result);
