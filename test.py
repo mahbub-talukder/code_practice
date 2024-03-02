@@ -544,5 +544,16 @@ age = 50
 
 # print(data)
 
-for _ in range(10):
-    print("_-->", _)
+# for _ in range(10):
+#     print("_-->", _)
+
+from datetime import datetime, timedelta, date
+today = datetime.now().date()
+exception_month = datetime.strptime('2024-03-04','%Y-%m-%d').date()
+
+if today.day == 4 and today != exception_month:
+    print("today-->", today)
+else:
+    print("else-->", today)
+
+    
