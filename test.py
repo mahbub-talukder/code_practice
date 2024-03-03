@@ -556,4 +556,13 @@ if today.day == 4 and today != exception_month:
 else:
     print("else-->", today)
 
+
+import html
+
+raw_text = f"""commit \r\n[edit logical-systems BDIX-RT firewall policer M/S-Blueberry-Online-BDIX-BW]\r\n 'if-exceeding'\r\n Missing mandatory statement: 'burst-size-limit'\r\nerror: commit failed: (missing mandatory statements)\r\n\r\n[edit]\r\ndevOps@Uttara-MX204-RT# exit configuration-mode \r\nThe configuration has been changed but not committed\r\nExiting configuration mode\r\n\r\ndevOps@Uttara-MX204-RT> exit"""
+
+sanitized_text = raw_text.replace(r'\r','').replace(r'\n', '<br/>')
+print("sanitized_text-->", sanitized_text)
+
+
     
