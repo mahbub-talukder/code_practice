@@ -547,22 +547,29 @@ age = 50
 # for _ in range(10):
 #     print("_-->", _)
 
-from datetime import datetime, timedelta, date
-today = datetime.now().date()
-exception_month = datetime.strptime('2024-03-04','%Y-%m-%d').date()
+# from datetime import datetime, timedelta, date
+# today = datetime.now().date()
+# exception_month = datetime.strptime('2024-03-04','%Y-%m-%d').date()
 
-if today.day == 4 and today != exception_month:
-    print("today-->", today)
-else:
-    print("else-->", today)
+# if today.day == 4 and today != exception_month:
+#     print("today-->", today)
+# else:
+#     print("else-->", today)
 
 
-import html
+# import html
 
-raw_text = f"""commit \r\n[edit logical-systems BDIX-RT firewall policer M/S-Blueberry-Online-BDIX-BW]\r\n 'if-exceeding'\r\n Missing mandatory statement: 'burst-size-limit'\r\nerror: commit failed: (missing mandatory statements)\r\n\r\n[edit]\r\ndevOps@Uttara-MX204-RT# exit configuration-mode \r\nThe configuration has been changed but not committed\r\nExiting configuration mode\r\n\r\ndevOps@Uttara-MX204-RT> exit"""
+# raw_text = f"""commit \r\n[edit logical-systems BDIX-RT firewall policer M/S-Blueberry-Online-BDIX-BW]\r\n 'if-exceeding'\r\n Missing mandatory statement: 'burst-size-limit'\r\nerror: commit failed: (missing mandatory statements)\r\n\r\n[edit]\r\ndevOps@Uttara-MX204-RT# exit configuration-mode \r\nThe configuration has been changed but not committed\r\nExiting configuration mode\r\n\r\ndevOps@Uttara-MX204-RT> exit"""
 
-sanitized_text = raw_text.replace(r'\r','').replace(r'\n', '<br/>')
-print("sanitized_text-->", sanitized_text)
+# sanitized_text = raw_text.replace(r'\r','').replace(r'\n', '<br/>')
+# print("sanitized_text-->", sanitized_text)
+
+total_due = 500
+balance = 1
+actual_due = (total_due-balance)
+
+ptg = (100/balance) * actual_due if balance > 0 else 100
+print("ptg-->", ptg)
 
 
     
