@@ -55,14 +55,31 @@ const tillDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDa
 
 
 // console.log(Math.round(calculateTotalLimit(startDate, tillDate, salesAmount)));
+// function newcall_back(data){
+//     let sum  =  15 + data
+//     // console.log('sum-->',sum);
+//     // console.log('print c');
+//     return sum
 
-// function data_gen(a,call_back){
-//     setTimeout(() => {
-//         a = 5
-//         call_back(a)
-        
-//     }, 2000);
 // }
+// function data_gen(a,call_back){
+//         return call_back(a)
+// }
+// let result = data_gen(50,newcall_back)
+// console.log(result);
+
+function data_genv2(data,cb){
+    let result =  data + 10
+    return cb(result)
+
+}
+
+result = data_genv2(20,(res)=>{
+
+})
+
+
+console.log("data_genv2-->", );
 
 // console.log('print a');
 // console.log('print b');
@@ -91,9 +108,8 @@ const tillDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDa
 var  fetchw = {
     other_property : 'something',
     a : 1,
-    b : 1,
+    b : 2,
     post : function(url){
-        
         return new Promise ((resolve,reject)=> {
             setTimeout(() => {
                 if(this.a==this.b){
@@ -107,35 +123,54 @@ var  fetchw = {
     } 
 }
 
+// async function mainModuleasdf(){
+//     let value = await fetchw.post('url').then(res=>{
+//         console.log("res-->", res);
+//     }) .catch(err=>{
+//         console.log(err);
+//     });
 
-async function main(){
+//     let valueres = await fetchw.post('url').then(res=>{
+//         console.log("res-->", res);
+//     }) .catch(err=>{
+//         console.log(err);
+//     });
+// }
 
-    console.log('print a');
-    console.log('print b');
+
+
+
+// async function main(){
+
+//     console.log('print a');
+//     console.log('print b');
     
 
-    // let fetch =  new Promise((resolve,reject)=>{
-    //     setTimeout(() => {
-    //         if(a==b){
-    //             console.log("I am waiting for 2 minutes")
-    //             resolve(100)
-    //         }else{
-    //             reject("a is not equal to b")
-    //         }
-    //     }, 2000);
-    // })
+//     // let fetch =  new Promise((resolve,reject)=>{
+//     //     setTimeout(() => {
+//     //         if(a==b){
+//     //             console.log("I am waiting for 2 minutes")
+//     //             resolve(100)
+//     //         }else{
+//     //             reject("a is not equal to b")
+//     //         }
+//     //     }, 2000);
+//     // })
     
-    let result =  await fetch('https://dummyjson.com/products/1',{
-        method  : 'GET',
-    }).json()
-    console.log("result-->", result);
+//     let result =  await fetch('https://dummyjson.com/products/1',{
+//         method  : 'GET',
+//     }).json()
+//     console.log("result-->", result);
 
-    // let value = await fetchw.post('url').catch(err=>{
-    //     console.log(err);
-    // });
-    // console.log("sum-->", value + 10);
-    // console.log("something else=-->");
-}
+//     let value = await fetchw.post('url').then(res=>{
+//         console.log("res-->", res);
+
+//     }) .catch(err=>{
+//         console.log(err);
+//     });
+//     console.log("sum-->", value + 10);
+//     console.log("something else=-->");
+// }
 
 // main()
 
