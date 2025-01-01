@@ -487,7 +487,7 @@ def calculate_duration(d1, d2):
 d1 = datetime(2023, 1, 1, 5, 0, 0)
 d2 = datetime(2023, 1, 1, 5, 0, 0)
 
-result = calculate_duration(d1, d2)
+# result = calculate_duration(d1, d2)
 # print(result)
 
 # import pandas as pd
@@ -564,12 +564,73 @@ age = 50
 # sanitized_text = raw_text.replace(r'\r','').replace(r'\n', '<br/>')
 # print("sanitized_text-->", sanitized_text)
 
-total_due = 500
-balance = 1
-actual_due = (total_due-balance)
+# total_due = 500
+# balance = 1
+# actual_due = (total_due-balance)
 
-ptg = (100/balance) * actual_due if balance > 0 else 100
-print("ptg-->", ptg)
+# ptg = (100/balance) * actual_due if balance > 0 else 100
+# print("ptg-->", ptg)
 
 
     
+# test = ['sdf']
+# if not test:
+#     print('safdlasfd')
+
+# required_balance = 70
+# total_credit_required = 100
+# recharge = 80
+
+# give_credit =  (total_credit_required*recharge)/required_balance
+# print("give_credit-->", give_credit)
+
+
+# Python3 code to illustrate the conversion 
+# of excel serial date to datetime 
+  
+# Importing xlrd module 
+# import xlrd 
+  
+
+# xl_date = 45831
+  
+# datetime_date = xlrd.xldate_as_datetime(xl_date, datemode=0) 
+  
+# date_object = datetime_date.date() 
+
+# print(date_object) 
+
+# # alternative
+# from datetime import datetime, timedelta
+
+# # Example Excel date
+# excel_date = 45831  # Days since epoch
+
+# # Base date for 1900 system (epoch)
+# epoch_date = datetime(1899, 12, 31)  # January 1, 1900 is day 1, so subtract 2 days.
+
+# # Correct for Excel's leap year bug if necessary
+# if excel_date >= 60:
+#     excel_date -= 1
+
+# # Convert to datetime
+# date_result = epoch_date + timedelta(days=excel_date)
+# print(date_result.date())
+
+
+customer_username = "SO176551"
+total_bill =126000
+# otc_bill = 3500
+valid_from = datetime.strptime('2024-12-03','%Y-%m-%d').date()
+valid_to = datetime.strptime('2024-12-31','%Y-%m-%d').date()
+total_month_day = calendar.monthrange(valid_from.year, valid_from.month)[1]
+print("total_month_day-->", total_month_day)
+diff =  (valid_to - valid_from).days + 1
+
+expected_bill =  (total_bill/total_month_day) * diff
+output = f"{customer_username}-->bill_days-->{diff},total_bill-->{total_bill}, expected_bill-->{expected_bill}, fixed_discount--> {total_bill-expected_bill}"
+print("output-->", output)
+
+
+
+
